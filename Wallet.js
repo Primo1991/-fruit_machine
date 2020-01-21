@@ -14,7 +14,20 @@ constructor(money) {
     }
 {
     this.changeWallet = (value, type ="+") => {
-        if( typeof value === "number" && !isNaN(value))
+        if( typeof value === "number" && !isNaN(value)){
+            if ( type === "+") {
+                return _money += value;
+            } else if (type ==="-") {
+                return _money -= value;
+            } else {
+                throw new Error ("Nieprawidlowy typ dzialania")
+            }
+
+            
+        } else {
+            console.log(typeof value);
+            throw new Error ("nieprawidlowa liczba")
+        }
     }
 }
 }
